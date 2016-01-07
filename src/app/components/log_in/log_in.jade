@@ -1,0 +1,23 @@
+h1
+  | {{ 'LOG_IN' | translate }}
+
+form(name='logInForm', ng-submit='logInCtrl.logIn(logInCtrl.user)', novalidate)
+  div.alert.alert-danger(ng-show="logInCtrl.invalidLogin" role="alert")
+    | {{ 'USER.LOGIN_ERROR' | translate }}
+
+  .form-group
+    label
+      | {{ 'USER.USERNAME' | translate }}
+    input.form-control(type='text', name='username', ng-model='logInCtrl.user.username', required)
+    p.help-block(ng-show="logInForm.username.$invalid && !logInForm.username.$pristine")
+      | {{ 'USER.BLANK_USERNAME' | translate }}
+
+  .form-group
+    label
+      | {{ 'USER.PASSWORD' | translate }}
+    input.form-control(type='password', name='password', ng-model='logInCtrl.user.password', required)
+    p.help-block(ng-show="logInForm.password.$invalid && !logInForm.password.$pristine")
+      | {{ 'USER.BLANK_PASSWORD' | translate }}
+
+  button.btn.btn-primary(type='submit', ng-disabled="logInForm.$invalid")
+    | {{ 'SUBMIT' | translate }}

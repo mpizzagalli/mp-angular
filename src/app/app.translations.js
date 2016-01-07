@@ -27,8 +27,12 @@ angular.module('app').config([
         BLANK_SURNAME: 'El apellido no puede quedar en blanco.',
         BLANK_USERNAME: 'El nombre de usuario no puede quedar en blanco.',
         BLANK_PASSWORD: 'La contraseña no puede quedar en blanco.',
-        INVALID_MAIL: 'El correo electronico es invalido.'
-      }
+        INVALID_MAIL: 'El correo electronico es invalido.',
+        LOGIN_ERROR: 'Usuario y/o contraseña invalidos.'
+      },
+      LOG_IN: 'Conectarse',
+      LOG_OUT: 'Desconectarse',
+      HOME: 'Inicio'
     })
     .translations('en', {
       DAYS_OF_WEEK: {
@@ -55,8 +59,12 @@ angular.module('app').config([
         BLANK_SURNAME: 'The last name can\'t be blank.',
         BLANK_USERNAME: 'The user name can\'t be blank.',
         BLANK_PASSWORD: 'The password can\'t be blank.',
-        INVALID_MAIL: 'The email is invalid.'
-      }
+        INVALID_MAIL: 'The email is invalid.',
+        LOGIN_ERROR: 'User name and/or password are invalid.'
+      },
+      LOG_IN: 'Log in',
+      LOG_OUT: 'Log out',
+      HOME: 'Home'
     });
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy(null);
