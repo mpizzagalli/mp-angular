@@ -1,0 +1,52 @@
+.center
+  h1
+    | Sign up
+
+  form(name='signUpForm', ng-submit="signUpCtrl.addUser(signUpCtrl.user)", novalidate)
+    .form-group
+      label
+        | Nombre
+      input.form-control(type='text', name='firstName', ng-model='signUpCtrl.user.firstName', required)
+      p.help-block(ng-show="signUpForm.firstName.$invalid && !signUpForm.firstName.$pristine")
+        | El nombre no puede quedar en blanco.
+
+    .form-group
+      label
+        | Apellido
+      input.form-control(type='text', name='lastName', ng-model='signUpCtrl.user.lastName', required)
+      p.help-block(ng-show="signUpForm.lastName.$invalid && !signUpForm.lastName.$pristine")
+        | El apellido no puede quedar en blanco.
+
+    .form-group
+      label
+        | Nombre de usuario
+      input.form-control(type='text', name='username', ng-model='signUpCtrl.user.username', required)
+      p.help-block(ng-show="signUpForm.username.$invalid && !signUpForm.username.$pristine")
+        | El Nombre de usuario no puede quedar en blanco.
+
+    .form-group
+      label
+        | Email
+      input.form-control(type='email', name='email', ng-model='signUpCtrl.user.email', required)
+      p.help-block(ng-show="signUpForm.email.$invalid && !signUpForm.email.$pristine")
+        | El email es invalido.
+
+    .form-group
+      label
+        | Contraseña
+      input.form-control(type='password', name='password', ng-model='signUpCtrl.user.password', required)
+      p.help-block(ng-show="signUpForm.password.$invalid && !signUpForm.password.$pristine")
+        | La contraseña no puede quedar en blanco.
+
+    .form-group
+      label
+        | Confirmar contraseña
+      input.form-control(type='password', name='confirmPassword', ng-model='signUpCtrl.user.confirmPassword',  required)
+      p.help-block(ng-show="signUpForm.confirmPassword.$invalid && !signUpForm.confirmPassword.$pristine")
+        | La contraseña no puede quedar en blanco.
+
+    button.btn.btn-primary(type="submit", ng-disabled="signUpForm.$invalid")
+      | Submit
+
+  a(ui-sref='home')
+    | Back to home
