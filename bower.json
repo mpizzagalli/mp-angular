@@ -22,5 +22,8 @@
     "bootstrap": "~3.3.4",
     "restangular": "~1.5.1",
     "angular-mocks": "~1.4.6"
+  },
+  "resolutions": {
+    "angular-translate": "~2.7.2"
   }
 }
