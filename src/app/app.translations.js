@@ -29,7 +29,9 @@ angular.module('app').config([
         BLANK_PASSWORD: 'La contraseña no puede quedar en blanco.',
         INVALID_MAIL: 'El correo electronico es invalido.',
         LOGIN_ERROR: 'Usuario y/o contraseña invalidos.',
-        CREATION: 'Dia de creacion'
+        CREATION: 'Dia de creacion',
+        CANCEL: 'Cancelar',
+        EDIT: 'Editar'
       },
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
@@ -63,7 +65,9 @@ angular.module('app').config([
         BLANK_PASSWORD: 'The password can\'t be blank.',
         INVALID_MAIL: 'The email is invalid.',
         LOGIN_ERROR: 'User name and/or password are invalid.',
-        CREATION: 'Creation day'
+        CREATION: 'Creation day',
+        CANCEL: 'Cancel',
+        EDIT: 'Edit'
       },
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',
