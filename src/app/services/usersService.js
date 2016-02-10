@@ -1,27 +1,40 @@
 angular.module('app').factory('usersService', [
   'Restangular', 'localStorageService', '$rootScope',
   function (Restangular, localStorageService, $rootScope) {
+    const setTokenAsDefaultHeader = () => {
+      Restangular.defaultHeaders['X-Parse-Session-Token'] = localStorageService.get('currentUser').token;
+    };
+
+    const signIn = (user) => {
+      const success = (response) => {
+        $rootScope.user = {
+          firstName: response.firstName,
+          lastName: response.lastName,
+          username: user.username
+        };
+        localStorageService.set('currentUser', {
+          token: response.sessionToken,
+          objectId: response.objectId
+        });
+        setTokenAsDefaultHeader();
+      };
+
+      return Restangular.all('login').customGET('', user).then(success);
+    };
+
+    const updateUserData = (data) => {
+      return Restangular.all('users').customPUT(data, localStorageService.get('currentUser').objectId);
+    };
+
     return {
       signUp: (user) => {
         return Restangular.all('users').post(user);
       },
       setSessionTokenHeader: () => {
-        Restangular.defaultHeaders['X-Parse-Session-Token'] = localStorageService.get('currentUser').token;
+        setTokenAsDefaultHeader();
       },
       logIn: (user) => {
-        return Restangular.all('login').customGET('', user).then(
-          (response) => {
-            $rootScope.user = {
-              firstName: response.firstName,
-              lastName: response.lastName
-            };
-            localStorageService.set('currentUser', {
-              token: response.sessionToken,
-              objectId: response.objectId
-            });
-            Restangular.defaultHeaders['X-Parse-Session-Token'] = response.sessionToken;
-          }
-        );
+        return signIn(user);
       },
       logOut: () => {
         return Restangular.all('logout').post().then(
@@ -41,14 +54,24 @@ angular.module('app').factory('usersService', [
         }
       },
       updateUser: (user) => {
-        return Restangular.all('users').customPUT(user, localStorageService.get('currentUser').objectId).then(
-          (response) => {
-            $rootScope.user = {
-              firstName: response.firstName,
-              lastName: response.lastName
-            };
-          }
-        );
+        const success = (response) => {
+          $rootScope.user = {
+            firstName: response.firstName,
+            lastName: response.lastName,
+            username: user.username
+          };
+        };
+
+        return updateUserData(user).then(success);
+      },
+      changePassword: (newPassword) => {
+        const success = () => {
+          delete Restangular.defaultHeaders['X-Parse-Session-Token'];
+          newPassword.username = $rootScope.user.username;
+          return signIn(newPassword);
+        };
+
+        return updateUserData(newPassword).then(success);
       }
     };
   }

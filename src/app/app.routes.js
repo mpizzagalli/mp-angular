@@ -56,6 +56,16 @@ angular.module('app').config([
           }
         },
         authenticate: true
+      })
+      .state('main.password', {
+        url: '/password',
+        views: {
+          content: {
+            controller: 'PasswordController as passwordCtrl',
+            templateUrl: '../app/components/password/password.html'
+          }
+        },
+        authenticate: true
       });
 
     $locationProvider.html5Mode(true);

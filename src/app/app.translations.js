@@ -31,7 +31,10 @@ angular.module('app').config([
         LOGIN_ERROR: 'Usuario y/o contraseña invalidos.',
         CREATION: 'Dia de creacion',
         CANCEL: 'Cancelar',
-        EDIT: 'Editar'
+        EDIT: 'Editar',
+        UPDATE_PASSWORD: 'Actualizar contraseña',
+        SHORT_PASSWORD: 'La contraseña debe tener al menos 8 caracteres.',
+        INVALID_CONFIRM_PASSWORD: 'Las contraseñas deben ser iguales.'
       },
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
@@ -67,7 +70,10 @@ angular.module('app').config([
         LOGIN_ERROR: 'User name and/or password are invalid.',
         CREATION: 'Creation day',
         CANCEL: 'Cancel',
-        EDIT: 'Edit'
+        EDIT: 'Edit',
+        UPDATE_PASSWORD: 'Update password',
+        SHORT_PASSWORD: 'Password must have at least 8 characters.',
+        INVALID_CONFIRM_PASSWORD: 'The passwords must be identical.'
       },
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',

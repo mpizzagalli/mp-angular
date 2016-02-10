@@ -1,6 +1,5 @@
 h1
   | {{ 'PROFILE' | translate }}
-
 form(name='profileForm', ng-submit="profileCtrl.updateUser(profileCtrl.user)", novalidate)
   .form-group
     label
@@ -39,3 +38,5 @@ form(name='profileForm', ng-submit="profileCtrl.updateUser(profileCtrl.user)", n
     | {{ 'USER.EDIT' | translate }}
   a.btn.btn-danger(ng-show="profileCtrl.editOn", ng-click="profileCtrl.deactivateEdit()")
     | {{ 'USER.CANCEL' | translate }}
+button.btn.btn-primary(ui-sref='main.password')
+  | {{ 'USER.UPDATE_PASSWORD' | translate }}
