@@ -1,0 +1,22 @@
+.center
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        a.navbar-brand(ui-sref='main.home')
+          | {{ 'HOME' | translate }}
+      ul.nav.navbar-nav
+        li
+          a(ui-sref='main.profile', ng-show='mainCtrl.logged()')
+            | {{ $root.user.firstName + ' ' + $root.user.lastName }}
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(ng-click='mainCtrl.logOut()', ng-show='mainCtrl.logged()')
+            | {{ 'LOG_OUT' | translate }}
+        li
+          a(ui-sref='main.log_in', ng-show='!mainCtrl.logged()')
+            | {{ 'LOG_IN' | translate }}
+        li
+          a(ui-sref='main.sign_up', ng-show='!mainCtrl.logged()')
+            | {{ 'SIGN_UP' | translate }}
+
+  div(ui-view='content')

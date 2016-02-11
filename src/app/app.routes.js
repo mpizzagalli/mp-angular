@@ -4,27 +4,58 @@ angular.module('app').config([
 
     // For any unmatched urls
     $urlRouterProvider.otherwise( ($injector) => {
-      $injector.get('$state').go('home');
+      $injector.get('$state').go('main.home');
     });
 
     // Now set up the states
     $stateProvider
-      .state('home', {
-        url: '/home',
+      .state('main', {
+        abstract: true,
         views: {
           main: {
-            templateUrl: '../app/components/home/index.html'
+            controller: 'MainController as mainCtrl',
+            templateUrl: '../app/components/main/main.html'
           }
         }
       })
-      .state('sign_up', {
+      .state('main.home', {
+        url: '/home',
+        views: {
+          content: {
+            templateUrl: '../app/components/home/index.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('main.sign_up', {
         url: '/sign_up',
         views: {
-          main: {
+          content: {
             controller: 'SignUpController as signUpCtrl',
             templateUrl: '../app/components/sign_up/index.html'
           }
-        }
+        },
+        authenticate: false
+      })
+      .state('main.log_in', {
+        url: '/log_in',
+        views: {
+          content: {
+            controller: 'LogInController as logInCtrl',
+            templateUrl: '../app/components/log_in/log_in.html'
+          }
+        },
+        authenticate: false
+      })
+      .state('main.profile', {
+        url: '/me',
+        views: {
+          content: {
+            controller: 'ProfileController as profileCtrl',
+            templateUrl: '../app/components/profile/profile.html'
+          }
+        },
+        authenticate: true
       });
 
     $locationProvider.html5Mode(true);

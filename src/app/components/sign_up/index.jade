@@ -1,52 +1,48 @@
-.center
-  h1
-    | {{ 'SIGN_UP' | translate }}
+h1
+  | {{ 'SIGN_UP' | translate }}
 
-  form(name='signUpForm', ng-submit="signUpCtrl.addUser(signUpCtrl.user)", novalidate)
-    .form-group
-      label
-        | {{ 'USER.NAME' | translate }}
-      input.form-control(type='text', name='firstName', ng-model='signUpCtrl.user.firstName', required)
-      p.help-block(ng-show="signUpForm.firstName.$invalid && !signUpForm.firstName.$pristine")
-        | {{ 'USER.BLANK_NAME' | translate }}
+form(name='signUpForm', ng-submit="signUpCtrl.addUser(signUpCtrl.user)", novalidate)
+  .form-group
+    label
+      | {{ 'USER.NAME' | translate }}
+    input.form-control(type='text', name='firstName', ng-model='signUpCtrl.user.firstName', required)
+    p.help-block(ng-show="signUpForm.firstName.$invalid && !signUpForm.firstName.$pristine")
+      | {{ 'USER.BLANK_NAME' | translate }}
 
-    .form-group
-      label
-        | {{ 'USER.SURNAME' | translate }}
-      input.form-control(type='text', name='lastName', ng-model='signUpCtrl.user.lastName', required)
-      p.help-block(ng-show="signUpForm.lastName.$invalid && !signUpForm.lastName.$pristine")
-        | {{ 'USER.BLANK_SURNAME' | translate }}
+  .form-group
+    label
+      | {{ 'USER.SURNAME' | translate }}
+    input.form-control(type='text', name='lastName', ng-model='signUpCtrl.user.lastName', required)
+    p.help-block(ng-show="signUpForm.lastName.$invalid && !signUpForm.lastName.$pristine")
+      | {{ 'USER.BLANK_SURNAME' | translate }}
 
-    .form-group
-      label
-        | {{ 'USER.USERNAME' | translate }}
-      input.form-control(type='text', name='username', ng-model='signUpCtrl.user.username', required)
-      p.help-block(ng-show="signUpForm.username.$invalid && !signUpForm.username.$pristine")
-        | {{ 'USER.BLANK_USERNAME' | translate }}
+  .form-group
+    label
+      | {{ 'USER.USERNAME' | translate }}
+    input.form-control(type='text', name='username', ng-model='signUpCtrl.user.username', required)
+    p.help-block(ng-show="signUpForm.username.$invalid && !signUpForm.username.$pristine")
+      | {{ 'USER.BLANK_USERNAME' | translate }}
 
-    .form-group
-      label
-        | {{ 'USER.MAIL' | translate }}
-      input.form-control(type='email', name='email', ng-model='signUpCtrl.user.email', required)
-      p.help-block(ng-show="signUpForm.email.$invalid && !signUpForm.email.$pristine")
-        | {{ 'USER.INVALID_MAIL' | translate }}
+  .form-group
+    label
+      | {{ 'USER.MAIL' | translate }}
+    input.form-control(type='email', name='email', ng-model='signUpCtrl.user.email', required)
+    p.help-block(ng-show="signUpForm.email.$invalid && !signUpForm.email.$pristine")
+      | {{ 'USER.INVALID_MAIL' | translate }}
 
-    .form-group
-      label
-        | {{ 'USER.PASSWORD' | translate }}
-      input.form-control(type='password', name='password', ng-model='signUpCtrl.user.password', required)
-      p.help-block(ng-show="signUpForm.password.$invalid && !signUpForm.password.$pristine")
-        | {{ 'USER.BLANK_PASSWORD' | translate }}
+  .form-group
+    label
+      | {{ 'USER.PASSWORD' | translate }}
+    input.form-control(type='password', name='password', ng-model='signUpCtrl.user.password', required)
+    p.help-block(ng-show="signUpForm.password.$invalid && !signUpForm.password.$pristine")
+      | {{ 'USER.BLANK_PASSWORD' | translate }}
 
-    .form-group
-      label
-        | {{ 'USER.CONFIRM_PASSWORD' | translate }}
-      input.form-control(type='password', name='confirmPassword', ng-model='signUpCtrl.user.confirmPassword',  required)
-      p.help-block(ng-show="signUpForm.confirmPassword.$invalid && !signUpForm.confirmPassword.$pristine")
-        | {{ 'USER.BLANK_PASSWORD' | translate }}
+  .form-group
+    label
+      | {{ 'USER.CONFIRM_PASSWORD' | translate }}
+    input.form-control(type='password', name='confirmPassword', ng-model='signUpCtrl.user.confirmPassword',  required)
+    p.help-block(ng-show="signUpForm.confirmPassword.$invalid && !signUpForm.confirmPassword.$pristine")
+      | {{ 'USER.BLANK_PASSWORD' | translate }}
 
-    button.btn.btn-primary(type="submit", ng-disabled="signUpForm.$invalid")
-      | {{ 'SUBMIT' | translate }}
-
-  a(ui-sref='home')
-    | {{ 'BACK_HOME' | translate }}
+  button.btn.btn-primary(type="submit", ng-disabled="signUpForm.$invalid")
+    | {{ 'SUBMIT' | translate }}

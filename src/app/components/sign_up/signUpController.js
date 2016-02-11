@@ -5,8 +5,8 @@ angular.module('app').controller('SignUpController', [
       if (user.password === user.confirmPassword) {
         usersService.signUp(user).then(
           () => {
-            $state.go('home');
-          },
+            $state.go('main.home');
+          }).catch(
           () => {
             console.log('The request failed');
           }
