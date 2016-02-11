@@ -7,5 +7,18 @@ angular.module('app').run([
         e.preventDefault();
       }
     });
+
+    if (usersService.isAuthenticated()) {
+      usersService.setSessionTokenHeader();
+
+      usersService.currentUser().then(
+        (response) => {
+          $rootScope.user = {
+            firstName: response.firstName,
+            lastName: response.lastName
+          };
+        }
+      );
+    }
   }
 ]);

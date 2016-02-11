@@ -1,0 +1,23 @@
+h1
+  | {{ 'PROFILE' | translate }}
+
+p
+  strong
+    | {{ 'USER.NAME' | translate }} :
+  |  {{ profileCtrl.user.firstName }}
+ p
+  strong
+    | {{ 'USER.SURNAME' | translate }} :
+  |  {{ profileCtrl.user.lastName }}
+p
+  strong
+    | {{ 'USER.USERNAME' | translate }} :
+  |  {{ profileCtrl.user.username }}
+p
+  strong
+    | {{ 'USER.MAIL' | translate }} :
+  |  {{ profileCtrl.user.email }}
+ p
+  strong
+    | {{ 'USER.CREATION' | translate }} :
+  |  {{ profileCtrl.user.createdAt | date: 'dd/MM/yyyy'}}

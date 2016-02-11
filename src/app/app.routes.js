@@ -46,6 +46,16 @@ angular.module('app').config([
           }
         },
         authenticate: false
+      })
+      .state('main.profile', {
+        url: '/me',
+        views: {
+          content: {
+            controller: 'ProfileController as profileCtrl',
+            templateUrl: '../app/components/profile/profile.html'
+          }
+        },
+        authenticate: true
       });
 
     $locationProvider.html5Mode(true);

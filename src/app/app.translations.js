@@ -18,7 +18,7 @@ angular.module('app').config([
       SUBMIT: 'Enviar',
       USER: {
         NAME: 'Nombre',
-        SURNAME: 'Apeliido',
+        SURNAME: 'Apellido',
         USERNAME: 'Nombre de usuario',
         MAIL: 'Correo electronico',
         PASSWORD: 'Contraseña',
@@ -28,11 +28,13 @@ angular.module('app').config([
         BLANK_USERNAME: 'El nombre de usuario no puede quedar en blanco.',
         BLANK_PASSWORD: 'La contraseña no puede quedar en blanco.',
         INVALID_MAIL: 'El correo electronico es invalido.',
-        LOGIN_ERROR: 'Usuario y/o contraseña invalidos.'
+        LOGIN_ERROR: 'Usuario y/o contraseña invalidos.',
+        CREATION: 'Dia de creacion'
       },
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
-      HOME: 'Inicio'
+      HOME: 'WBooks',
+      PROFILE: 'Perfil'
     })
     .translations('en', {
       DAYS_OF_WEEK: {
@@ -60,11 +62,13 @@ angular.module('app').config([
         BLANK_USERNAME: 'The user name can\'t be blank.',
         BLANK_PASSWORD: 'The password can\'t be blank.',
         INVALID_MAIL: 'The email is invalid.',
-        LOGIN_ERROR: 'User name and/or password are invalid.'
+        LOGIN_ERROR: 'User name and/or password are invalid.',
+        CREATION: 'Creation day'
       },
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',
-      HOME: 'Home'
+      HOME: 'WBooks',
+      PROFILE: 'Profile'
     });
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy(null);
