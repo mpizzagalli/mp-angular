@@ -67,6 +67,16 @@ angular.module('app').config([
           }
         },
         authenticate: true
+      })
+      .state('main.dashboard', {
+        url: '/dashboard',
+        views: {
+          content: {
+            controller: 'DashboardController as dashboardCtrl',
+            templateUrl: '../app/components/dashboard/dashboard.html'
+          }
+        },
+        authenticate: true
       });
 
     $locationProvider.html5Mode(true);

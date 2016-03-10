@@ -8,6 +8,9 @@
         li
           a(ui-sref='main.profile', ng-show='mainCtrl.logged()')
             | {{ $root.user.firstName + ' ' + $root.user.lastName }}
+        li
+          a(ui-sref='main.dashboard', ng-show='mainCtrl.logged()')
+            | {{ 'DASHBOARD.TITLE' | translate }}
       ul.nav.navbar-nav.navbar-right
         li
           a(ng-click='mainCtrl.logOut()', ng-show='mainCtrl.logged()')

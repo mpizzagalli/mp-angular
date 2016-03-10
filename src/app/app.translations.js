@@ -41,7 +41,15 @@ angular.module('app').config([
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
       HOME: 'WBooks',
-      PROFILE: 'Perfil'
+      PROFILE: 'Perfil',
+      DASHBOARD: {
+        TITLE: 'Dashboard',
+        AUTHOR: 'Autor: ',
+        YEAR: 'Año: ',
+        PUBLISHER: 'Editorial: ',
+        NEXT: 'Siguiente',
+        PREVIOUS: 'Anterior'
+      }
     })
     .translations('en', {
       DAYS_OF_WEEK: {
@@ -82,7 +90,15 @@ angular.module('app').config([
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',
       HOME: 'WBooks',
-      PROFILE: 'Profile'
+      PROFILE: 'Profile',
+      DASHBOARD: {
+        TITLE: 'Dashboard',
+        AUTHOR: 'Author: ',
+        YEAR: 'Year: ',
+        PUBLISHER: 'Publisher: ',
+        NEXT: 'Next',
+        PREVIOUS: 'Previous'
+      }
     });
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy(null);
