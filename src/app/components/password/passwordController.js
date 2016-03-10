@@ -1,15 +1,25 @@
 angular.module('app').controller('PasswordController', [
-  '$state', 'usersService',
-  function ($state, usersService) {
+  '$state', 'usersService', '$translate',
+  function ($state, usersService, $translate) {
     this.updatePassword = () => {
       const body = {
         password: this.password
       };
-      usersService.changePassword(body).then(
-        () => {
-          $state.go('main.profile');
-        }
-      );
+      const success = () => {
+        $state.go(
+          'main.profile', {
+            message: $translate.instant('USER.PASSWORD_UPDATE_SUCCES')
+          }
+        );
+      };
+      const failure = () => {
+        $state.go(
+          'main.profile', {
+            message: $translate.instant('USER.PASSWORD_UPDATE_FAILURE')
+          }
+        );
+      };
+      usersService.changePassword(body).then(success, failure);
     };
   }
 ]);

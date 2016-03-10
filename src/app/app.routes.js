@@ -49,6 +49,7 @@ angular.module('app').config([
       })
       .state('main.profile', {
         url: '/me',
+        params: { message: null },
         views: {
           content: {
             controller: 'ProfileController as profileCtrl',

@@ -34,7 +34,9 @@ angular.module('app').config([
         EDIT: 'Editar',
         UPDATE_PASSWORD: 'Actualizar contraseña',
         SHORT_PASSWORD: 'La contraseña debe tener al menos 8 caracteres.',
-        INVALID_CONFIRM_PASSWORD: 'Las contraseñas deben ser iguales.'
+        INVALID_CONFIRM_PASSWORD: 'Las contraseñas deben ser iguales.',
+        PASSWORD_UPDATE_SUCCES: 'Cambio de contraseña realizado con éxito.',
+        PASSWORD_UPDATE_FAILURE: 'No se pudo realizar el cambio de contraseña.'
       },
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
@@ -73,7 +75,9 @@ angular.module('app').config([
         EDIT: 'Edit',
         UPDATE_PASSWORD: 'Update password',
         SHORT_PASSWORD: 'Password must have at least 8 characters.',
-        INVALID_CONFIRM_PASSWORD: 'The passwords must be identical.'
+        INVALID_CONFIRM_PASSWORD: 'The passwords must be identical.',
+        PASSWORD_UPDATE_SUCCES: 'Password update realized successfully.',
+        PASSWORD_UPDATE_FAILURE: 'Password update failed.'
       },
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',

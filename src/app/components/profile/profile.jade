@@ -1,5 +1,7 @@
 h1
   | {{ 'PROFILE' | translate }}
+div.alert.alert-info(ng-show="profileCtrl.message" role="alert")
+  | {{ profileCtrl.message }}
 form(name='profileForm', ng-submit="profileCtrl.updateUser(profileCtrl.user)", novalidate)
   .form-group
     label

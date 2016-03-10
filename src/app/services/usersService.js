@@ -30,12 +30,8 @@ angular.module('app').factory('usersService', [
       signUp: (user) => {
         return Restangular.all('users').post(user);
       },
-      setSessionTokenHeader: () => {
-        setTokenAsDefaultHeader();
-      },
-      logIn: (user) => {
-        return signIn(user);
-      },
+      setSessionTokenHeader: setTokenAsDefaultHeader,
+      logIn: signIn,
       logOut: () => {
         return Restangular.all('logout').post().then(
           () => {

@@ -1,6 +1,8 @@
 angular.module('app').controller('ProfileController', [
-  '$state', 'usersService',
-  function ($state, usersService) {
+  '$state', 'usersService', '$stateParams',
+  function ($state, usersService, $stateParams) {
+    this.message = $stateParams.message;
+
     usersService.currentUser().then(
       (response) => {
         this.user = response;
