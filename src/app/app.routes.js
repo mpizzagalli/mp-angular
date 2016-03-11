@@ -77,6 +77,16 @@ angular.module('app').config([
           }
         },
         authenticate: true
+      })
+      .state('main.books', {
+        url: '/books/:id',
+        views: {
+          content: {
+            controller: 'BooksController as booksCtrl',
+            templateUrl: '../app/components/books/books.html'
+          }
+        },
+        authenticate: true
       });
 
     $locationProvider.html5Mode(true);

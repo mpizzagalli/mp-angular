@@ -48,7 +48,13 @@ angular.module('app').config([
         YEAR: 'Año: ',
         PUBLISHER: 'Editorial: ',
         NEXT: 'Siguiente',
-        PREVIOUS: 'Anterior'
+        PREVIOUS: 'Anterior',
+        DETAILS: 'Ver mas'
+      },
+      BOOKS: {
+        AUTHOR: 'Autor del libro: ',
+        YEAR: 'Año de publicación: ',
+        PUBLISHER: 'Editorial: '
       }
     })
     .translations('en', {
@@ -97,7 +103,13 @@ angular.module('app').config([
         YEAR: 'Year: ',
         PUBLISHER: 'Publisher: ',
         NEXT: 'Next',
-        PREVIOUS: 'Previous'
+        PREVIOUS: 'Previous',
+        DETAILS: 'See more'
+      },
+      BOOKS: {
+        AUTHOR: 'Author of the book: ',
+        YEAR: 'Year of publishment: ',
+        PUBLISHER: 'Publisher: '
       }
     });
     $translateProvider.preferredLanguage('es');
