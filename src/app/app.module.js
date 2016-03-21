@@ -3,6 +3,7 @@ angular.module(
     'ui.router',
     'LocalStorageModule',
     'restangular',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ui.bootstrap'
   ]
 );

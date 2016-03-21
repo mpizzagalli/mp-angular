@@ -17,6 +17,8 @@ div(ng-repeat='book in dashboardCtrl.books')
     strong
       | {{ 'DASHBOARD.YEAR' | translate }}
     | {{ book.year }}
+  .btn.btn-info.btn-md(ui-sref="main.rent({ id: book.objectId })")
+    | {{ 'RENT.BUTTON' | translate }}
 .btn.btn-primary(ng-click='dashboardCtrl.previousPage()', ng-disabled='dashboardCtrl.page == 0')
   | {{ 'DASHBOARD.PREVIOUS' | translate }}
 .btn.btn-primary(ng-click='dashboardCtrl.nextPage()', ng-disabled='(dashboardCtrl.page + 1) >= (dashboardCtrl.booksAmount / dashboardCtrl.limit)')

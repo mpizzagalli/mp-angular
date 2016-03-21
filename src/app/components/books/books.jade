@@ -1,5 +1,7 @@
 h2
   | {{ booksCtrl.book.name }}
+div.alert.alert-info(ng-show="booksCtrl.message" role="alert")
+  | {{ booksCtrl.message }}
 img(ng-src="{{ booksCtrl.book.imageUrl }}")
 h3
   strong
@@ -16,3 +18,5 @@ h3
     | {{ 'BOOKS.YEAR' | translate }}
   br
   | {{ booksCtrl.book.year }}
+.btn.btn-info(ui-sref="main.rent({ id: booksCtrl.book.objectId })")
+  | {{ 'RENT.BUTTON' | translate }}

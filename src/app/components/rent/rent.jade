@@ -1,0 +1,20 @@
+h1
+  | {{ 'RENT.TITLE' | translate }}
+h4
+  | {{ 'RENT.TEXT' | translate }}
+  strong
+    | {{ Ctrl.book.name }}
+
+form(name='rentForm', ng-submit='Ctrl.rent()', novalidate)
+  .form-group
+    label
+      | {{ 'RENT.START_DATE' | translate }}
+    input.form-control(type="date", name='startDate', datepicker-popup, ng-model="Ctrl.startDate", ng-change="Ctrl.updateEndDate()", required)
+
+  .form-group
+    label
+      | {{ 'RENT.END_DATE' | translate }}
+    input.form-control(type="date", name='endDate', ng-model="Ctrl.endDate", readonly)
+
+  button.btn.btn-success(type='submit', ng-disabled="rentForm.$invalid")
+    | {{ 'RENT.CONFIRM' | translate }}

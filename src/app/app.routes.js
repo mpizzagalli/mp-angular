@@ -80,10 +80,21 @@ angular.module('app').config([
       })
       .state('main.books', {
         url: '/books/:id',
+        params: { message: null },
         views: {
           content: {
             controller: 'BooksController as booksCtrl',
             templateUrl: '../app/components/books/books.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('main.rent', {
+        url: '/rent/:id',
+        views: {
+          content: {
+            controller: 'RentController as Ctrl',
+            templateUrl: '../app/components/rent/rent.html'
           }
         },
         authenticate: true

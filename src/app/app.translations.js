@@ -55,6 +55,16 @@ angular.module('app').config([
         AUTHOR: 'Autor del libro: ',
         YEAR: 'Año de publicación: ',
         PUBLISHER: 'Editorial: '
+      },
+      RENT: {
+        TITLE: 'Alquilar un libro',
+        TEXT: 'Usted esta por alquiler el libro: ',
+        START_DATE: 'Fecha de inicio alquiler:',
+        END_DATE: 'Fecha de finalizacion alquiler:',
+        CONFIRM: 'Confirmar alquiler',
+        BUTTON: 'Alquilar',
+        SUCCESS: 'Has alquilado con exito el libro.',
+        FAILURE: 'No se ha podido alquilar correctamente el libro.'
       }
     })
     .translations('en', {
@@ -110,6 +120,16 @@ angular.module('app').config([
         AUTHOR: 'Author of the book: ',
         YEAR: 'Year of publishment: ',
         PUBLISHER: 'Publisher: '
+      },
+      RENT: {
+        TITLE: 'Rent a book',
+        TEXT: 'You are about to rent the book: ',
+        START_DATE: 'Start date of rent:',
+        END_DATE: 'End date of rent:',
+        CONFIRM: 'Confirmar rent',
+        BUTTON: 'Rent',
+        SUCCESS: 'The book has been rented successfully.',
+        FAILURE: 'The book rent couldn\'t be done.'
       }
     });
     $translateProvider.preferredLanguage('es');
