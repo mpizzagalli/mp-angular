@@ -2,7 +2,8 @@ h1
   | {{ 'DASHBOARD.TITLE' | translate }}
 div(ng-repeat='book in dashboardCtrl.books')
   h2
-    | {{ book.name }}
+    a(ui-sref='main.books({ id: book.objectId })')
+      | {{ book.name }}
   img(ng-src="{{ book.imageUrl }}")
   h4
     strong

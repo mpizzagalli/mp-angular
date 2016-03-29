@@ -1,0 +1,18 @@
+h2
+  | {{ booksCtrl.book.name }}
+img(ng-src="{{ booksCtrl.book.imageUrl }}")
+h3
+  strong
+    | {{ 'BOOKS.AUTHOR' | translate }}
+  br
+  | {{ booksCtrl.book.author }}
+h3
+  strong
+    | {{ 'BOOKS.PUBLISHER' | translate }}
+  br
+  | {{ booksCtrl.book.publisher }}
+h3
+  strong
+    | {{ 'BOOKS.YEAR' | translate }}
+  br
+  | {{ booksCtrl.book.year }}
