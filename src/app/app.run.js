@@ -15,7 +15,8 @@ angular.module('app').run([
         (response) => {
           $rootScope.user = {
             firstName: response.firstName,
-            lastName: response.lastName
+            lastName: response.lastName,
+            username: response.username
           };
         }
       );

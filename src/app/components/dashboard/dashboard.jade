@@ -1,0 +1,23 @@
+h1
+  | {{ 'DASHBOARD.TITLE' | translate }}
+div(ng-repeat='book in dashboardCtrl.books')
+  h2
+    a(ui-sref='main.books({ id: book.objectId })')
+      | {{ book.name }}
+  img(ng-src="{{ book.imageUrl }}")
+  h4
+    strong
+      | {{ 'DASHBOARD.AUTHOR' | translate }}
+    | {{ book.author }}
+  h4
+    strong
+      | {{ 'DASHBOARD.PUBLISHER' | translate }}
+    | {{ book.publisher }}
+  h4
+    strong
+      | {{ 'DASHBOARD.YEAR' | translate }}
+    | {{ book.year }}
+.btn.btn-primary(ng-click='dashboardCtrl.previousPage()', ng-disabled='dashboardCtrl.page == 0')
+  | {{ 'DASHBOARD.PREVIOUS' | translate }}
+.btn.btn-primary(ng-click='dashboardCtrl.nextPage()', ng-disabled='(dashboardCtrl.page + 1) >= (dashboardCtrl.booksAmount / dashboardCtrl.limit)')
+  | {{ 'DASHBOARD.NEXT' | translate }}

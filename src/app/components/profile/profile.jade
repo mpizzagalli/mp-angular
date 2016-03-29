@@ -1,23 +1,44 @@
 h1
   | {{ 'PROFILE' | translate }}
+div.alert.alert-info(ng-show="profileCtrl.message" role="alert")
+  | {{ profileCtrl.message }}
+form(name='profileForm', ng-submit="profileCtrl.updateUser(profileCtrl.user)", novalidate)
+  .form-group
+    label
+      | {{ 'USER.NAME' | translate }}
+    input.form-control(type='text', name='firstName', ng-model='profileCtrl.user.firstName', ng-readonly="!profileCtrl.editOn", required)
+    p.help-block(ng-show="profileForm.firstName.$invalid && !profileForm.firstName.$pristine")
+      | {{ 'USER.BLANK_NAME' | translate }}
 
-p
-  strong
-    | {{ 'USER.NAME' | translate }} :
-  |  {{ profileCtrl.user.firstName }}
- p
-  strong
-    | {{ 'USER.SURNAME' | translate }} :
-  |  {{ profileCtrl.user.lastName }}
-p
-  strong
-    | {{ 'USER.USERNAME' | translate }} :
-  |  {{ profileCtrl.user.username }}
-p
-  strong
-    | {{ 'USER.MAIL' | translate }} :
-  |  {{ profileCtrl.user.email }}
- p
-  strong
-    | {{ 'USER.CREATION' | translate }} :
-  |  {{ profileCtrl.user.createdAt | date: 'dd/MM/yyyy'}}
+  .form-group
+    label
+      | {{ 'USER.SURNAME' | translate }}
+    input.form-control(type='text', name='lastName', ng-model='profileCtrl.user.lastName', ng-readonly="!profileCtrl.editOn", required)
+    p.help-block(ng-show="profileForm.lastName.$invalid && !profileForm.lastName.$pristine")
+      | {{ 'USER.BLANK_SURNAME' | translate }}
+
+  .form-group
+    label
+      | {{ 'USER.USERNAME' | translate }}
+    input.form-control(type='text', name='username', ng-model='profileCtrl.user.username', ng-readonly="!profileCtrl.editOn", required)
+    p.help-block(ng-show="profileForm.username.$invalid && !profileForm.username.$pristine")
+      | {{ 'USER.BLANK_USERNAME' | translate }}
+
+  .form-group
+    label
+      | {{ 'USER.MAIL' | translate }}
+    input.form-control(type='email', name='email', ng-model='profileCtrl.user.email', ng-readonly="!profileCtrl.editOn", required)
+    p.help-block(ng-show="profileForm.email.$invalid && !profileForm.email.$pristine")
+      | {{ 'USER.INVALID_MAIL' | translate }}
+  .form-group
+    label
+      | {{ 'USER.CREATION' | translate }}
+    input.form-control(type='text', name='createdAt', ng-model='profileCtrl.user.createdAt', readonly , required)
+  button.btn.btn-primary(type="submit", ng-disabled="profileForm.$invalid", ng-show="profileCtrl.editOn")
+    | {{ 'SUBMIT' | translate }}
+  a.btn.btn-primary(ng-hide="profileCtrl.editOn", ng-click="profileCtrl.activateEdit()")
+    | {{ 'USER.EDIT' | translate }}
+  a.btn.btn-danger(ng-show="profileCtrl.editOn", ng-click="profileCtrl.deactivateEdit()")
+    | {{ 'USER.CANCEL' | translate }}
+button.btn.btn-primary(ui-sref='main.password')
+  | {{ 'USER.UPDATE_PASSWORD' | translate }}

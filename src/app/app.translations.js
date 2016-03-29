@@ -29,12 +29,33 @@ angular.module('app').config([
         BLANK_PASSWORD: 'La contraseña no puede quedar en blanco.',
         INVALID_MAIL: 'El correo electronico es invalido.',
         LOGIN_ERROR: 'Usuario y/o contraseña invalidos.',
-        CREATION: 'Dia de creacion'
+        CREATION: 'Dia de creacion',
+        CANCEL: 'Cancelar',
+        EDIT: 'Editar',
+        UPDATE_PASSWORD: 'Actualizar contraseña',
+        SHORT_PASSWORD: 'La contraseña debe tener al menos 8 caracteres.',
+        INVALID_CONFIRM_PASSWORD: 'Las contraseñas deben ser iguales.',
+        PASSWORD_UPDATE_SUCCES: 'Cambio de contraseña realizado con éxito.',
+        PASSWORD_UPDATE_FAILURE: 'No se pudo realizar el cambio de contraseña.'
       },
       LOG_IN: 'Conectarse',
       LOG_OUT: 'Desconectarse',
       HOME: 'WBooks',
-      PROFILE: 'Perfil'
+      PROFILE: 'Perfil',
+      DASHBOARD: {
+        TITLE: 'Dashboard',
+        AUTHOR: 'Autor: ',
+        YEAR: 'Año: ',
+        PUBLISHER: 'Editorial: ',
+        NEXT: 'Siguiente',
+        PREVIOUS: 'Anterior',
+        DETAILS: 'Ver mas'
+      },
+      BOOKS: {
+        AUTHOR: 'Autor del libro: ',
+        YEAR: 'Año de publicación: ',
+        PUBLISHER: 'Editorial: '
+      }
     })
     .translations('en', {
       DAYS_OF_WEEK: {
@@ -63,12 +84,33 @@ angular.module('app').config([
         BLANK_PASSWORD: 'The password can\'t be blank.',
         INVALID_MAIL: 'The email is invalid.',
         LOGIN_ERROR: 'User name and/or password are invalid.',
-        CREATION: 'Creation day'
+        CREATION: 'Creation day',
+        CANCEL: 'Cancel',
+        EDIT: 'Edit',
+        UPDATE_PASSWORD: 'Update password',
+        SHORT_PASSWORD: 'Password must have at least 8 characters.',
+        INVALID_CONFIRM_PASSWORD: 'The passwords must be identical.',
+        PASSWORD_UPDATE_SUCCES: 'Password update realized successfully.',
+        PASSWORD_UPDATE_FAILURE: 'Password update failed.'
       },
       LOG_IN: 'Log in',
       LOG_OUT: 'Log out',
       HOME: 'WBooks',
-      PROFILE: 'Profile'
+      PROFILE: 'Profile',
+      DASHBOARD: {
+        TITLE: 'Dashboard',
+        AUTHOR: 'Author: ',
+        YEAR: 'Year: ',
+        PUBLISHER: 'Publisher: ',
+        NEXT: 'Next',
+        PREVIOUS: 'Previous',
+        DETAILS: 'See more'
+      },
+      BOOKS: {
+        AUTHOR: 'Author of the book: ',
+        YEAR: 'Year of publishment: ',
+        PUBLISHER: 'Publisher: '
+      }
     });
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy(null);

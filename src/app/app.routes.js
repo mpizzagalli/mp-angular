@@ -49,10 +49,41 @@ angular.module('app').config([
       })
       .state('main.profile', {
         url: '/me',
+        params: { message: null },
         views: {
           content: {
             controller: 'ProfileController as profileCtrl',
             templateUrl: '../app/components/profile/profile.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('main.password', {
+        url: '/password',
+        views: {
+          content: {
+            controller: 'PasswordController as passwordCtrl',
+            templateUrl: '../app/components/password/password.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('main.dashboard', {
+        url: '/dashboard',
+        views: {
+          content: {
+            controller: 'DashboardController as dashboardCtrl',
+            templateUrl: '../app/components/dashboard/dashboard.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('main.books', {
+        url: '/books/:id',
+        views: {
+          content: {
+            controller: 'BooksController as booksCtrl',
+            templateUrl: '../app/components/books/books.html'
           }
         },
         authenticate: true
